@@ -27,3 +27,7 @@ func (TopPetOwner) ViewDef(db *gorm.DB) gorm.ViewOption {
 			Limit(10),
 	}
 }
+
+type ViewDefiner interface {
+	ViewDef(db *gorm.DB) gorm.ViewOption
+}
